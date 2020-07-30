@@ -16,13 +16,15 @@ trait TimsTamp {
      * @ORM\PrePersist()
      */
     public function createdAt(){
-        $this->created_at = new \DateTime();
+        $this->createdAt = new \DateTime();
+        $this->updateAt = new \DateTime();
     }
+
     /**
      * @ORM\PreUpdate()
      */
     public function updatedAt(){
-        $this->created_at = new \DateTime();
+        $this->updateAt = new \DateTime();
     }
 }
 
