@@ -35,6 +35,7 @@ class ListController extends AbstractFOSRestController
     {
         $this->taskListRepository= $taskListRepository;
         $this->entityManagerInterface= $entityManagerInterface;
+        $this->tasktRepository= $taskRepository;
     }
 
     /**
@@ -82,7 +83,7 @@ class ListController extends AbstractFOSRestController
    }
 
    /**
-    * @Rest\FileParam(name="image", description=" background the list", nullable= false, image= true)
+    * @Rest\FileParam(name="image", description=" background the list", nullable=false, image= true)
     * @param $id
     * @param ParamFetcher $paramFetcher
     * @param Request $request
@@ -185,7 +186,7 @@ class ListController extends AbstractFOSRestController
   * @return "FOS\RestBundle\View\View"
   */
   public function removeListTaskAction(int $id){
-    $task= $this->taskRepository->findOneBy(["id" =>$id]);
+    $task= $this->taskRepository->findOneBy(['id' =>$id]);
     if($task){
         $this->entityManagerInterface->remove($task);
         $this->entityManagerInterface->flash();
