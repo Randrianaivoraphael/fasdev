@@ -82,11 +82,10 @@ class ListController extends AbstractFOSRestController
    }
 
    /**
-    * @param int $id
+    * @Rest\FileParam(name="image", description=" background the list", nullable= false, image= true)
+    * @param $id
     * @param ParamFetcher $paramFetcher
     * @param Request $request
-    * @Rest\FileParam(name="image", description=" background the list", nullable= false, image= true)
-    * @return int
     * @return "FOS\RestBundle\View\View"
     */
 
