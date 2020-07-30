@@ -83,7 +83,7 @@ class ListController extends AbstractFOSRestController
    }
 
    /**
-    * @Rest\FileParam(name="image", description=" background the list", nullable=false, image= true)
+    * @Rest\FileParam(name="image", description=" background the list", nullable=false, image=true)
     * @param $id
     * @param ParamFetcher $paramFetcher
     * @param Request $request
